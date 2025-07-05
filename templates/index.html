@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job News Aggregator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <h1>Job News Aggregator</h1>
+
+    <main class="container">
+        <!-- Left Column: Job Titles -->
+        <aside class="column" id="jobs-column">
+            <h2>Tracked Job Titles</h2>
+            
+            <form id="add-job-form">
+                <input type="text" id="new-job-title" placeholder="e.g., Data Scientist" required autocomplete="off">
+                <button type="submit" id="add-job-btn">Add Job</button>
+            </form>
+            
+            <ul id="job-list">
+                <!-- Job items will be dynamically inserted here by script.js -->
+                <!-- A loading state could be shown here initially if desired -->
+            </ul>
+        </aside>
+
+        <!-- Right Column: Articles -->
+        <section class="column" id="articles-column">
+            <h2>News Articles</h2>
+            
+            <div id="articles-container">
+                <!-- 
+                    Initial message is set by script.js.
+                    Example: <div class="message">Select a job title from the list to see relevant news articles.</div>
+                -->
+            </div>
+        </section>
+    </main>
+
+    <!-- The script is placed at the end of the body to ensure the DOM is fully loaded before execution -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
